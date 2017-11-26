@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+        <title>Szyfr Cezara</title>
+
+        <link rel="icon" href="assets/images/favicon.png">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    </head>
+
+    <body>
+        <div class="cipher">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-3">Szyfr Cezara</h1>
+                    <p class="lead">Szyfr podstawieniowy, w którym każda litera tekstu jawnego (niezaszyfrowanego) zastępowana jest inną,
+                        oddaloną od niej o stałą liczbę pozycji w alfabecie, literą (szyfr monoalfabetyczny), przy czym kierunek zamiany musi być zachowany.</p>
+                </div>
+            </div>
+            <div class="container" id="container">
+                <h4 class="display-4">Co chcesz zrobić?</h4>
+                <form>
+                    <label class="custom-control custom-radio">
+                        <input type="radio" name="radio" id="encoderRadio" class="custom-control-input" onclick="check()" checked>
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description"><p class="lead">Chcę zaszyfrować wiadomość</p></span>
+                    </label>
+                    <label class="custom-control custom-radio">
+                        <input type="radio" name="radio" id="decoderRadio" class="custom-control-input" onclick="check()">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description"><p class="lead">Chcę odszyfrować wiadomość</p></span>
+                    </label>
+                    <div class="encoder" id="encoder">
+                        <div class="form-group">
+                            <label class="col-form-label">
+                                <p class="lead">Treść wiadomości</p>
+                            </label>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="3" placeholder="..." name="message" id="message"></textarea>
+                            </div>
+                            <label for="shift">
+                                <p class="lead">Wybierz przesunięcie</p>
+                            </label>
+                            <div class="row">
+                                <div class="col-2">
+                                    <select class="form-control" id="shift">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                        <option>13</option>
+                                        <option>14</option>
+                                        <option>15</option>
+                                        <option>16</option>
+                                        <option>17</option>
+                                        <option>18</option>
+                                        <option>19</option>
+                                        <option>20</option>
+                                        <option>21</option>
+                                        <option>22</option>
+                                        <option>23</option>
+                                        <option>24</option>
+                                        <option>25</option>
+                                        <option>26</option>
+                                        <option>27</option>
+                                        <option>28</option>
+                                        <option>29</option>
+                                        <option>30</option>
+                                        <option>31</option>
+                                        <option>32</option>
+                                        <option>33</option>
+                                        <option>34</option>
+                                    </select>
+                                </div>
+                                <div class="col-2">
+                                    <button type="button" class="btn btn-primary" name="encode" onclick="encodeMessage()">Wykonaj</button>
+                                </div>
+                                <div class="col-8">
+                                    <button type="button" class="btn btn-danger float-right" onclick="clearMessage()">Usuń wiadomość</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <br>
+                                <label class="col-form-label">
+                                    <p class="lead">Zaszyfrowana wiadomość</p>
+                                </label>
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="3" placeholder="..." name="encodedMessage" id="encodedMessage" disabled></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="decoder" id="decoder">
+                        <div class="form-group">
+                            <label class="col-form-label">
+                                <p class="lead">Zaszyfrowana wiadomość</p>
+                            </label>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="3" placeholder="..." name="cipheredMessage" id="cipheredMessage"></textarea>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-primary" name="decode" onclick="decodeMessage()">Wykonaj</button>
+                                <button type="button" class="btn btn-danger float-right" onclick="clearMessage()">Usuń wiadomość</button>
+                            </div>
+                            <label class="col-form-label">
+                                <p class="lead">Możliwe wiadomości</p>
+                            </label>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="34" placeholder="..." name="decodedMessage" id="decodedMessage" disabled></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
+
+</html>
