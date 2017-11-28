@@ -1,6 +1,6 @@
 # caesar-cipher
 
-![License][license-url] ![Version][version-url] ![Done][done-url] ![Created][created-url]
+![License][license-url] ![Version][version-url] ![Done][done-url] ![Maintenance][maintenance-url]
 
 ### Caesar Encoder & Decoder
 
@@ -9,7 +9,7 @@
 <img src="assets/images/screenshot.png" alt="Screenshot" width="900" height="450" />
 <img src="assets/images/screenshot2.png" alt="Screenshot2" width="900" height="650" />
 
-[license-url]: https://img.shields.io/badge/license-Apache%202-green.svg?style=plastic "License"
-[version-url]: https://img.shields.io/badge/version-1.0.0-yellowgreen.svg?style=plastic "Version"
-[done-url]: https://img.shields.io/badge/done-yes-yellow.svg?style=plastic "Yes"
-[created-url]: https://img.shields.io/badge/created-11.2017-orange.svg?style=plastic "November"
+[license-url]: https://img.shields.io/badge/license-Apache%202-blue.svg?style=flat "License"
+[version-url]: https://img.shields.io/badge/version-1.0.0-brightgreen.svg?style=flat "Version"
+[done-url]: https://img.shields.io/badge/done-11.2017-yellow.svg?style=flat "Done"
+[maintenance-url]: https://img.shields.io/maintenance/no/2017.svg?style=flat "Maintenance"
