@@ -6,6 +6,8 @@
 
 #### Internet application that encodes / decodes messages using Caesar's encryption. An undoubted advantage is the ability to change the shift in encoding and display all possible combinations of messages as a result of decoding. The application uses Latin alphabet extended by Polish characters.
 
+https://codepen.io/kamwas93/pen/Xzyoar
+
 <img src="assets/images/screenshot.png" alt="Screenshot" width="900" height="450" />
 <img src="assets/images/screenshot2.png" alt="Screenshot2" width="900" height="650" />
 
